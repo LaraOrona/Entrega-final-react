@@ -5,12 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/material/Menu';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import CartWidget from './cart-widget';
 
 const NavBar = () => {
 
-const cartLength = 2
+  const cart = 2;
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -28,7 +28,7 @@ const cartLength = 2
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             El Emporio de La Ardilla
           </Typography>
-          <CartWidget cartLength={cartLength}/>
+          <CartWidget cartQuantity={cart}/>
         </Toolbar>
       </AppBar>
     </Box>
