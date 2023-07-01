@@ -16,7 +16,7 @@ const Main = () => {
 
         <Box sx={{ width: '100%' }}>
             <NavBar />
-            <TabsComponent />
+            <TabsComponent    />
 
         </Box>
     )
