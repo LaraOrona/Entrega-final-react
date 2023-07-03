@@ -6,12 +6,7 @@ import TabsComponent from '../../components/tabs';
 
 
 const Main = () => {
-    const [currentCategory, setCurrentCategory] = React.useState('cat1')
-
-    const handleChange = (_, value) => {
-        setCurrentCategory(value);
-    }
-
+    
     return (
 
         <Box sx={{ width: '100%' }}>
