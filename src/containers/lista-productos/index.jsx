@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from "@mui/material";
-import CardItem from "../../../components/card-item";
-import { getRemeras } from '../products';
+import CardItem from "../../components/card-item";
+import { listRemeras } from '../../sdk/remeras';
 
 
 
@@ -12,10 +12,15 @@ const SectionRemeras = () => {
     React.useEffect(()=>{
 
     setLoading(true);
-    getRemeras()
-    .then((res) => {
-        console.log(res);
-        setItem(res)
+    listRemeras()
+    .then ((res) => res.json())
+    .then((json) => {
+        console.log(json);
+        setItem(json.items);
+    })
+    .catch(() => {
+        alert('Error al cargar las remeras')
+        setLoading(false)
     })
     .finally(()=> {
         setLoading(false);
@@ -31,7 +36,7 @@ const SectionRemeras = () => {
                 :
                 items?.map((item, index)=>{
                     return(
-                        <CardItem key={index + item.nombre} nombre={item.nombre} precio={item.precio} stock={item.cantidad} img={item.img}/> 
+                        <CardItem key={index + item.nombre} nombre={item.nombre} precio={item.precio} stock={item.cantidad} imageURL={item.imgURL}/> 
                     )
 
                 })

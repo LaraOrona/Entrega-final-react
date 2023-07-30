@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
-import SectionRemeras from '../../pages/main/remeras';
+import SectionRemeras from '../../containers/lista-productos';
+import SectionFake from '../../containers/fake-section';
+
 
 
 const TabsComponent = () => {
@@ -15,7 +17,7 @@ const selectedSection = (value) => {
         case'tshirts':
             return <SectionRemeras />;
         case 'keyholders':
-            return <Box>Llaveros</Box>;
+            return <SectionFake />
         case 'cups':
             return <Box>Tazas</Box>;
             default:
